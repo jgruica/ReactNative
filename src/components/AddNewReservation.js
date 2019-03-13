@@ -66,7 +66,7 @@ class AddNewReservation extends Component {
     this.props.createReservation({ name, hotelName, arrivalDate, departureDate })
       .then(() => {
         this.setState({ creatingReservation: false });
-        this.props.history.push('/');
+        this.props.navigation.navigate('Home');
       })
       .catch(() => {
         this.setState({ creatingReservation: false });
@@ -92,7 +92,7 @@ class AddNewReservation extends Component {
   render() {
     const { creatingReservationErr, creatingReservation } = this.state;
     const { data } = this.props;
-    
+
     const arrivalDateValue = this.state.arrivalDate !== '' ?
       moment(this.state.arrivalDate).format('l').toString() : '';
     const departureDateValue = this.state.departureDate !== '' ?

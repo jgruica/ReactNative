@@ -7,10 +7,11 @@ import {
   Modal,
   TouchableHighlight
 } from 'react-native';
-import { Link } from "react-router-native";
-import moment from 'moment';
 import { graphql, compose, withApollo } from 'react-apollo';
+
+import moment from 'moment';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+
 import Loader from "./Loader";
 import { reservationQuery } from '../../queries/AllQueries';
 import { updateReservation, deleteReservation } from '../../mutations/AllMutations';
@@ -141,10 +142,10 @@ class ReservationDetails extends Component {
       return;
     }
     this.setState({ updatingReservation: true });
-    this.props.updateReservation({ name, hotelName, arrivalDate, departureDate }, { id: this.props.match.params.id })
+    this.props.updateReservation({ name, hotelName, arrivalDate, departureDate }, { id: this.props.navigation.getParam('id') })
       .then(() => {
         this.setState({ updatingReservation: false });
-        this.props.history.push('/');
+        this.props.navigation.navigate('Home');
       })
       .catch(() => {
         this.setState({ updatingReservation: false });
@@ -152,10 +153,11 @@ class ReservationDetails extends Component {
   }
 
   deleteReservation = () => {
-    this.props.deleteReservation({ id: this.props.match.params.id })
+    console.log(this.props.navigation.getParam('id'))
+    this.props.deleteReservation({ id: this.props.navigation.getParam('id') })
       .then(() => {
         this.toggleDeleteModal();
-        this.props.history.push('/');
+        this.props.navigation.navigate('Home');
       })
       .catch();
   }

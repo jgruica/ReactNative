@@ -3,8 +3,7 @@ import { ApolloProvider } from 'react-apollo';
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { HttpLink } from 'apollo-link-http'
 import ApolloClient from 'apollo-client';
-// import { NativeRouter, Route } from "react-router-native";
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import ReservationList from './components/ReservationList';
