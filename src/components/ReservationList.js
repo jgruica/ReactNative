@@ -5,30 +5,17 @@ import {
   ScrollView,
   TouchableOpacity
 } from 'react-native';
-import { Link } from "react-router-native";
 import { graphql, compose, withApollo } from 'react-apollo';
 import Icon from 'react-native-vector-icons/Entypo';
 
-import Loader from './Loader';
 import moment from 'moment';
 import sortBy from 'lodash/sortBy';
 
+import Loader from './Loader';
+
 import { reservations } from '../../queries/AllQueries';
 
-const styles = {
-  header: {
-    fontSize: 15,
-    textAlign: 'left',
-    marginLeft: 10,
-    color: '#2e3131'
-  },
-  text: {
-    fontSize: 15,
-    textAlign: 'left',
-    marginLeft: 10,
-    color: '#A9A9A9'
-  }
-}
+import styles from "../../styles/ReservationListStyle";
 
 const colors = ['#f1a9a0', '#d2527f', '#e74c3c', '#9f5afd', '#913d88', '#81cfe0', '#1e8bc3', '#2ecc71', '#1e824c', '#fef160', '#e67e22']
 let nextColorIndex = 0

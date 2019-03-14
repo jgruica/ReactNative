@@ -4,45 +4,15 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Picker
 } from 'react-native';
-import moment from 'moment';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import Loader from './Loader';
+import moment from 'moment';
+
 import { graphql, compose, withApollo } from 'react-apollo';
 import { createReservation } from '../../mutations/AllMutations';
 import { reservations } from '../../queries/AllQueries';
 
-import Icon from 'react-native-vector-icons/Entypo';
-
-const styles = {
-  wrapper: {
-    flex: 1,
-    paddingTop: 23,
-    alignItems: 'stretch'
-  },
-  text: {
-    fontSize: 15,
-    textAlign: 'left',
-    marginLeft: 10,
-    color: '#2e3131'
-  },
-  input: {
-    margin: 10,
-    height: 40,
-    borderColor: '#8c14fc',
-    borderWidth: 1
-  },
-  submitButton: {
-    backgroundColor: '#8c14fc',
-    padding: 10,
-    margin: 15,
-    height: 40,
-  },
-  submitButtonText: {
-    color: 'white'
-  }
-}
+import styles from "../../styles/AddNewReservationStyle";
 
 class AddNewReservation extends Component {
   state = {
@@ -56,6 +26,10 @@ class AddNewReservation extends Component {
     departureDatePickerVisible: false,
   }
 
+  static navigationOptions = {
+    title: "Create reservation",
+  }
+
   createNewReservation = () => {
     const { name, hotelName, arrivalDate, departureDate } = this.state;
     if (!name.length || !hotelName.length || !arrivalDate || !departureDate) {
@@ -66,6 +40,7 @@ class AddNewReservation extends Component {
     this.props.createReservation({ name, hotelName, arrivalDate, departureDate })
       .then(() => {
         this.setState({ creatingReservation: false });
+        this.props.data.refetch();
         this.props.navigation.navigate('Home');
       })
       .catch(() => {
@@ -107,22 +82,11 @@ class AddNewReservation extends Component {
           style={styles.input}
           placeholder="Name"
           onChangeText={(name) => this.setState({ name })} />
-        <Text style={styles.text}>Pick hotel: </Text>
-        {data.loading ? 
-         <Loader loading={data.loading} />
-        :
-        <Picker
-        selectedValue={this.state.hotelName}
-        onValueChange={(itemValue, itemIndex) =>
-          this.setState({ hotelName: itemValue })
-        }>
-        {data.reservations.map(reservation => {
-          return (
-            <Picker.Item label={reservation.hotelName} value={reservation.hotelName} />
-          )
-        })}
-      </Picker>
-        }
+        <Text style={styles.text}>Hotel name:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Hilton"
+          onChangeText={(hotelName) => this.setState({ hotelName })} />
         <TouchableOpacity onPress={() => this.showDateTimePicker('arrivalDatePickerVisible')}>
           <TextInput
             style={styles.input}

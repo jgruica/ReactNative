@@ -35,7 +35,7 @@ const Navigation = createStackNavigator({
   defaultNavigationOptions: {
     headerTintColor: '#fff',
     headerStyle: {
-      backgroundColor: '#000',
+      backgroundColor: '#000'
     },
   },
 }

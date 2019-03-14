@@ -16,81 +16,7 @@ import Loader from "./Loader";
 import { reservationQuery } from '../../queries/AllQueries';
 import { updateReservation, deleteReservation } from '../../mutations/AllMutations';
 
-const styles = {
-  wrapper: {
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    alignSelf: 'center'
-  },
-  text: {
-    fontSize: 15,
-    textAlign: 'left',
-    marginLeft: 10,
-    color: '#2e3131'
-  },
-  input: {
-    margin: 10,
-    height: 40,
-    borderColor: '#8c14fc',
-    borderWidth: 1
-  },
-  deleteButton: {
-    borderRadius: 10,
-    backgroundColor: '#cf000f',
-    width: '40%',
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    alignSelf: 'center',
-  },
-  updateButton: {
-    borderRadius: 10,
-    backgroundColor: '#8c14fc',
-    width: '40%',
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  modalContent: {
-    height: 100,
-    marginTop: 150,
-    backgroundColor: 'white',
-    padding: 23,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-    borderColor: 'rgba(0, 0, 0, 0.1)',
-    borderTop: '#cf000f',
-    borderBottom: '#cf000f'
-  },
-  buttonsContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 20
-  },
-  cancelButon: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#A9A9A9',
-    backgroundColor: '#FFFFFF',
-    width: '40%',
-    height: 40
-  },
-  cancelText: {
-    color: '#A9A9A9',
-    textAlign: 'center',
-    alignSelf: 'center',
-  },
-}
+import styles from "../../styles/ReservationDetailsStyle";
 
 class ReservationDetails extends Component {
   state = {
@@ -103,6 +29,10 @@ class ReservationDetails extends Component {
     updatingReservationErr: '',
     arrivalDatePickerVisible: false,
     departureDatePickerVisible: false,
+  }
+
+  static navigationOptions = {
+    title: "Details",
   }
 
   toggleDeleteModal = () => {
@@ -236,17 +166,17 @@ class ReservationDetails extends Component {
           </View>
         }
         <View style={styles.buttonsContainer}>
+        <TouchableOpacity
+            style={styles.deleteButton}
+            onPress={this.onPressDelete}
+          >
+            <Text style={styles.buttonText}>Delete</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.updateButton}
             onPress={this.updateReservation}
           >
-            <Text style={styles.buttonText}>Update reservation</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.deleteButton}
-            onPress={this.onPressDelete}
-          >
-            <Text style={styles.buttonText}>Delete reservation</Text>
+            <Text style={styles.updateButtonText}>Update</Text>
           </TouchableOpacity>
         </View>
         {this.state.displayDeleteModal &&
