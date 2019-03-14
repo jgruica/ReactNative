@@ -7,7 +7,7 @@ A reservation app made in React Native
 * Clone Repo
 * Install Dependencies - npm install
 * Run `react-native run-ios` for iOS
-* Run `react-native run-android` foe Android
+* Run `react-native run-android` for Android
 
 
 ### User Interface
