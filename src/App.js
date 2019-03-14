@@ -19,7 +19,6 @@ const client = new ApolloClient({
 
 const styles = {
   container: {
-    marginTop: 50,
     flex: 2,
     backgroundColor: '#F5FCFF',
   }

@@ -83,7 +83,6 @@ class ReservationDetails extends Component {
   }
 
   deleteReservation = () => {
-    console.log(this.props.navigation.getParam('id'))
     this.props.deleteReservation({ id: this.props.navigation.getParam('id') })
       .then(() => {
         this.toggleDeleteModal();

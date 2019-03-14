@@ -17,7 +17,8 @@ import { reservations } from '../../queries/AllQueries';
 
 import styles from "../../styles/ReservationListStyle";
 
-const colors = ['#f1a9a0', '#d2527f', '#e74c3c', '#9f5afd', '#913d88', '#81cfe0', '#1e8bc3', '#2ecc71', '#1e824c', '#fef160', '#e67e22']
+const colors = ['#f1a9a0', '#d2527f', '#e74c3c', '#9f5afd', 
+'#913d88', '#81cfe0', '#1e8bc3', '#2ecc71', '#1e824c', '#fef160', '#e67e22', '#f5e51b', '#f27935']
 let nextColorIndex = 0
 const colorMap = {}
 const getHotelColor = (hotelName) => {
