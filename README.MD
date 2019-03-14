@@ -14,15 +14,15 @@ A reservation app made in React Native
 
 List of reservations screen:
 
-![list](/screenshots/List.png)
+![list](/screenshoots/List.png)
 
 Create new reservation screen:
 
-![create](/screenshots/Create.png)
+![create](/screenshoots/Create.png)
 
 Reservation details (Updating and deleting) screen:
 
-![Details](/screenshots/Details.png)
+![Details](/screenshoots/Details.png)
 
 
 
