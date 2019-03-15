@@ -7,22 +7,22 @@ A reservation app made in React Native
 * Clone Repo
 * Install Dependencies - npm install
 * Run `react-native run-ios` for iOS
-* Run `react-native run-android` foe Android
+* Run `react-native run-android` for Android
 
 
 ### User Interface
 
 List of reservations screen:
 
-![list](/screenshots/List.png)
+![list](/screenshoots/List.png)
 
 Create new reservation screen:
 
-![create](/screenshots/Create.png)
+![create](/screenshoots/Create.png)
 
 Reservation details (Updating and deleting) screen:
 
-![Details](/screenshots/Details.png)
+![Details](/screenshoots/Details.png)
 
 
 
