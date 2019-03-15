@@ -18,7 +18,7 @@ import { updateReservation, deleteReservation } from '../../mutations/AllMutatio
 
 import styles from "../../styles/ReservationDetailsStyle";
 
-class ReservationDetails extends Component {
+export class ReservationDetails extends Component {
   state = {
     name: '',
     hotelName: '',

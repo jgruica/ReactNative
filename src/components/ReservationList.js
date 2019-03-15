@@ -37,12 +37,13 @@ const getHotelColor = (hotelName) => {
   }
 }
 
-class ReservationList extends Component {
+export class ReservationList extends Component {
   static navigationOptions = {
     title: "Reservations",
   }
   render() {
     const { data } = this.props;
+
     const sortedReservations = data.reservations && data.reservations.length && sortBy(data.reservations, "hotelName");
     const detailsIcon = <Icon name="chevron-small-right" size={30} color="#A9A9A9" />;
     if (data.loading) {
@@ -51,7 +52,7 @@ class ReservationList extends Component {
       return (
         <View>
           <ScrollView>
-            {sortedReservations.map(reservation =>
+            {sortedReservations && sortedReservations.map(reservation =>
               <View key={reservation.id} style={getHotelColor(reservation.hotelName)} >
                 <Text style={styles.header}>{reservation.name}</Text>
                 <Text style={styles.text}>{moment(reservation.arrivalDate).format("ll")} - {moment(reservation.departureDate).format("ll")}</Text>

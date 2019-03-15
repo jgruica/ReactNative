@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReservationList renders Reservation List 1`] = `
+<View>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "borderBottomColor": "#A9A9A9",
+            "borderBottomWidth": 0.2,
+            "borderLeftColor": "#f1a9a0",
+            "borderLeftWidth": 10,
+            "flex": 1,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#2e3131",
+              "fontSize": 15,
+              "marginLeft": 10,
+              "textAlign": "left",
+            }
+          }
+        >
+          Test Name
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#A9A9A9",
+              "fontSize": 15,
+              "marginLeft": 10,
+              "textAlign": "left",
+            }
+          }
+        >
+          Jan 1, 2020
+           - 
+          Jan 5, 2020
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#A9A9A9",
+              "fontSize": 15,
+              "marginLeft": 10,
+              "textAlign": "left",
+            }
+          }
+        >
+          Test Hotel
+        </Text>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "position": "absolute",
+              "right": 20,
+              "top": 10,
+            }
+          }
+        >
+          <Text>
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#A9A9A9",
+                    "fontSize": 30,
+                  },
+                  undefined,
+                  Object {
+                    "fontFamily": "Entypo",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignSelf": "flex-end",
+        "backgroundColor": "#8c14fc",
+        "borderRadius": 30,
+        "bottom": 30,
+        "height": 60,
+        "opacity": 1,
+        "position": "absolute",
+        "right": 20,
+        "width": 60,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 25,
+          "left": 22,
+          "top": 12,
+        }
+      }
+    >
+      +
+    </Text>
+  </View>
+</View>
+`;
